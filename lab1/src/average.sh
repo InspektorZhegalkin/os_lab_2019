@@ -9,6 +9,6 @@ count=$[ $count + 1 ]
 shift
 done
 echo $1
-#echo $count
-#let "ret=sum / count"
-#echo $ret
+echo $count
+let "ret=sum / count"
+echo $ret
