@@ -1,0 +1,18 @@
+gcc main.c swap.c -o swap
+./swap
+b a
+
+gcc -c main.c
+gcc -c revert_string.c
+ar rcs librs.a revert_string.o
+gcc main.o -L./ -lrs -o statically-linked
+./statically-linked gcc
+Reverted: ccg
+
+gcc -c main.c
+gcc -c -fPIC revert_string.c
+gcc -shared revert_string.o -o librevstrdyn.so
+gcc main.o -L./ -lrevstrdyn -o dynamically-linked
+LD_LIBRARY_PATH=$(pwd)
+./dynamically-linked littlelily
+Reverted: ylilelttil
